@@ -2,15 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 //Variables para las operaciones de SASS
 
 //colores
 
-$colorPrincipal:rgb(245, 224, 220);
-$colorSecundario: rgb(190, 187, 139);
-$colorHover: rgb(163, 162, 139);
+$colorPrincipal:rgb(204, 201, 220);
+$colorSecundario: grey;
+$colorHover: rgb(93, 113, 133);
 
 //tamaños de fuente
 
@@ -46,6 +47,10 @@ $alto: 50rem;
     width: 100vw;
     font-family: 'Seravek-ExtraLight';
     background-color: $colorPrincipal;
+    background-image: url(img/fondo2.png);
+    background-position: center;
+    background-size: cover;
+
 }
 
 
@@ -56,10 +61,17 @@ html {
 /* Header */
 
 .seccion-1 {
-
     width: $porcentaje1;
     height: auto;
     justify-content: center;
+
+
+
+    .Nombre {
+        background-color: rgb(23, 26, 33);
+
+    }
+
 }
 
 .Nombre__h1--text-align {
@@ -75,14 +87,14 @@ html {
 
 }
 
-
 /*slider*/
 
 .sliderPagina {
 
-    width: $porcentaje1;
-    height: $alto;
-    margin: 1.875rem auto 0 auto;
+    width: $porcentaje3;
+    height: auto;
+    margin: 1.875rem auto 1.875rem auto;
+
 }
 
 .carousel-inner img {
@@ -91,6 +103,7 @@ html {
     background-position: center;
     height: $porcentaje1;
     width: $porcentaje1;
+    border-radius: 1rem;
 }
 
 
@@ -99,8 +112,9 @@ html {
 .contenedorBarraNavegación {
     display: grid;
     justify-content: center;
-}
+    background-color: $colorSecundario;
 
+}
 
 .navbar {
     color: rgb(0, 0, 0);
@@ -109,76 +123,91 @@ html {
 
 .navbar li {
     padding: 1rem 1rem 1rem 1rem;
-    border-right: black 0.063rem solid;
 
 }
 
-li:last-child {
-    border-right: none;
+.dropdown-menu {
+    background-color: grey;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(151, 151, 151);
 }
 
 /*Nosotros*/
 
 .seccion-2 {
-
     @extend .seccion-1;
 }
 
+.seccion2grid {
+    display: grid;
+    grid-template-columns: (50% 50%);
+    grid-column-gap: 2rem;
+    height: auto;
+    padding: 3rem 3rem 3rem 3rem;
+}
+
 .seccion-2contenedor {
-    width: $porcentaje3 + 10%;
-    margin: 2rem auto 2rem;
     border: hidden;
-    padding-top: $porcentaje3;
     position: relative;
-
-
+    padding-top: 53%;
 }
 
 .seccion-2contenedor iframe {
+    display: grid;
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
     height: $porcentaje1;
     width: $porcentaje1;
-    border-radius: 0.313rem;
+    border-radius: 1rem;
 }
 
 
 .secciones {
+    width: 12rem;
     position: relative;
-    margin: auto;
+    padding: 1rem 0 1rem 0;
     text-align: center;
+    background-color: $colorSecundario;
+    display: grid;
 }
 
-.secciones:hover {
-    background: repeating-linear-gradient(to right, black, $colorPrincipal 10%, black);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-size: $porcentaje1*3;
-    background-position: -($porcentaje1*2);
-    animation: animatedText 1s;
+#Nosotros {
+    border-radius: 0 1rem 1rem 0;
+    transition: width 2s;
+}
+
+#Nosotros:hover {
+    width: 82.3rem;
+}
+
+#Productos {
+    @extend #Nosotros;
+}
+
+#Complementos {
+    @extend #Nosotros;
+}
+
+#Contacto {
+    width: $porcentaje1;
+    padding: 1rem 0 1rem 0;
+    text-align: center;
+    background-color: $colorSecundario;
+
+
+
 
 }
 
-@keyframes animatedText {
-    from {
-        background-position: $porcentaje5;
-    }
-}
-
-to {
-    background-position: $porcentaje1;
-}
 
 .contenedorParrafo {
-    display: block;
-    justify-content: center;
-    height: auto;
-    width: $porcentaje3 + 10%;
-    margin: 3rem auto 4rem auto;
+    display: grid;
+    text-align: center;
+    height: $porcentaje1;
+    width: $porcentaje1;
 }
 
 .contenedorParrafo__p--text-align {
@@ -187,30 +216,31 @@ to {
     line-height: 1.5rem;
 }
 
-
-
 /*Productos*/
 
 .seccion-3 {
     @extend .seccion-1;
-
 }
 
 .galeriaProductos {
-    margin: 1.875rem auto 1.875rem auto;
-    padding: 0.625rem;
+    padding: 1.875rem;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, minmax(12.5rem, 12.5rem));
     grid-auto-rows: minmax(12.5rem, 12.5rem);
-    gap: 0.625rem;
+    gap: 1.5rem;
+
 }
+
+.galeriaProductos a {
+    text-decoration: none;
+}
+
 
 .galeriaProductos__elemento {
     text-align: center;
+    color: black;
     font-size: $small;
-    border-radius: 0.313rem;
-    border: solid black 0.063rem;
 }
 
 .galeriaProductos__elemento:hover {
@@ -218,16 +248,19 @@ to {
     font-weight: bolder;
     transform: scale(1.3);
     transition: all 0.5s;
-
 }
 
 
 #elemento1 {
 
     background-image: url(img/img4a.jpg);
+    height: $porcentaje1;
+    width: $porcentaje1;
     background-position: center;
     background-size: cover;
-
+    border-radius: 0.5rem;
+    color: black;
+    border: solid $colorSecundario;
 }
 
 #elemento2 {
@@ -257,14 +290,15 @@ to {
 /* Complementos  */
 
 .seccion-4 {
-
     @extend .seccion-1;
+
 }
 
 .galeriaComplementos {
 
     @extend .galeriaProductos;
     grid-template-columns: repeat(3, minmax(12.5rem, 12.5rem));
+
 }
 
 
@@ -296,29 +330,43 @@ to {
 /*Contacto*/
 
 .seccion-5 {
-    display: grid;
     @extend .seccion-1;
+
 }
 
+.fondoFormulario {
+    display: grid;
+    background-image: url(img/fondofinal.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
 
 .formulario-contacto {
     display: grid;
-    background-color: $colorSecundario;
+    background: transparent;
+    backdrop-filter: blur(10px);
     width: $ancho - 31.25rem;
     height: auto;
-    margin: 1.875rem auto;
-    padding: 1.875rem;
+    margin: 1.875rem auto 1.875rem auto;
+    padding: 1.5rem;
     border-radius: 0.5rem;
-    border-style: none;
     position: relative;
 }
 
 .botFormulario {
-    background-color: $colorSecundario;
+    background: transparent;
+    backdrop-filter: blur(10px);
     padding: 0.2rem;
     border-radius: 0.2rem;
     border-style: none;
     box-shadow: ($xs - 0.4rem) ($xs - 0.4rem) $xs;
+    margin: 0.625rem;
+}
+
+.botonesFormularioUbicacion {
+    text-align: center;
+    padding: 1rem 0 1rem 0;
 
 }
 
@@ -342,6 +390,7 @@ to {
     border-radius: 0.188rem;
     font-weight: normal;
     color: black;
+
 }
 
 .botSub:hover {
@@ -354,29 +403,66 @@ to {
 /*Footer*/
 
 .seccion-7 {
-
     @extend .seccion-1;
 }
 
-.footer__h5--size {
-    display: flex;
-    justify-content: center;
-    padding: 1.25rem 0 1.25rem 0;
-    font-size: $small;
-
+.footerGrid {
+    display: grid;
+    grid-template-columns: (15% 67% 18%);
+    grid-column-gap: 2rem;
+    height: $porcentaje1;
+    padding: 2rem 2rem 2rem 2rem;
+    background-color: rgb(23, 26, 33);
 }
 
-/* Mobile first */
+.footer__text--size {
+    color: $colorPrincipal;
+    display: grid;
+    text-align: center;
+    line-height: 4rem;
+    font-size: $small;
+}
 
-/* Header */
+.redes {
+    text-align: center;
+    letter-spacing: .2rem;
+    line-height: 4rem;
+}
+
+.fa-whatsapp {
+    font-size: 1.5rem;
+    color: $colorPrincipal;
+}
+
+.fa-instagram {
+    @extend .fa-whatsapp;
+}
+
+.fa-facebook {
+    @extend .fa-whatsapp;
+}
+
+/*Mobile first*/
+
+/*Header*/
 
 @media only screen and (min-width: 0px) {
-    .Nombre {
+    .Nombre__h1--text-align {
         font-size: 3rem;
     }
 
     .navbar {
         grid-template-columns: 1, 5rem;
+    }
+
+    .sliderPagina {
+        min-width: 20rem;
+    }
+
+    .seccion2grid {
+
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
     }
 
     .parrafo {
@@ -397,24 +483,45 @@ to {
         font-size: 0.7rem;
     }
 
-    .footer {
-        font-size: 0.7rem;
-    }
-
     .secciones {
         font-size: 1.2rem;
+    }
+
+    #Contacto {
+        font-size: 1.2rem;
+    }
+
+
+    .secciones:hover {
+        max-width: 17rem;
+        transition: width 2s;
+    }
+
+
+    .footerGrid {
+        grid-template-columns: 1fr;
     }
 
 }
 
 @media only screen and (min-width: 360px) {
-    .Nombre {
+    .Nombre__h1--text-aligne {
         font-size: 3rem;
     }
 
     .navbar {
         grid-template-columns: 1, 5rem;
     }
+
+    .sliderPagina {
+        min-width: 20rem;
+    }
+
+    .seccion2grid {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+
 
     .parrafo {
         font-size: 0.8rem;
@@ -429,60 +536,33 @@ to {
     }
 
     .formulario-contacto {
-        width: 14rem;
+        width: 20rem;
         height: 30rem;
         font-size: 0.7rem;
     }
 
-    .footer {
-        font-size: 0.7rem;
-    }
-
     .secciones {
         font-size: 1.2rem;
     }
+
+    #Contacto {
+        font-size: 1.2rem;
+    }
+
+    .secciones:hover {
+        max-width: 20rem;
+        transition: width 2s;
+    }
+
+    .footerGrid {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 
 @media only screen and (min-width: 600px) {
-    .Nombre {
-        font-size: 4rem;
-    }
-
-    .navbar {
-        grid-template-columns: repeat(5, 3rem);
-    }
-
-
-    .parrafo {
-        font-size: 1.2rem;
-    }
-
-    .galeriaProductos {
-        grid-template-columns: repeat(5, minmax(12.5rem, 12.5rem));
-    }
-
-    .galeriaComplementos {
-        grid-template-columns: repeat(3, minmax(12.5rem, 12.5rem));
-    }
-
-    .formulario-contacto {
-        width: 20rem;
-        height: 40rem;
-        font-size: 0.938rem;
-    }
-
-    .footer {
-        font-size: 0.938rem;
-    }
-
-    .secciones {
-        font-size: 1.5rem;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .Nombre {
+    .Nombre__h1--text-align {
         font-size: 5rem;
     }
 
@@ -490,8 +570,85 @@ to {
         grid-template-columns: repeat(5, 3rem);
     }
 
+    .sliderPagina {
+        min-width: 32rem;
+    }
+
+    .seccion2grid {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+
+
     .parrafo {
         font-size: 1.2rem;
+    }
+
+    .galeriaProductos {
+        grid-template-columns: 12.5rem;
+    }
+
+    .galeriaComplementos {
+        grid-template-columns: 12.5rem
+    }
+
+    .formulario-contacto {
+        width: 30rem;
+        height: 40rem;
+        font-size: 0.938rem;
+    }
+
+    .secciones {
+        font-size: 1.5rem;
+    }
+
+    #Contacto {
+        font-size: 1.5rem;
+    }
+
+    .secciones:hover {
+        max-width: 34.5rem;
+        transition: width 2s;
+    }
+
+    .footerGrid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media only screen and (min-width: 700px) {
+
+    .galeriaProductos {
+        grid-template-columns: repeat(3, minmax(12.5rem, 12.5rem));
+    }
+
+    .galeriaComplementos {
+        grid-template-columns: repeat(3, minmax(12.5rem, 12.5rem));
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Nombre__h1--text-align {
+        font-size: 5rem;
+    }
+
+    .navbar {
+        grid-template-columns: repeat(5, 3rem);
+    }
+
+
+    .sliderPagina {
+        min-width: 45rem;
+    }
+
+    .seccion2grid {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    .parrafo {
+        font-size: 1.5rem;
     }
 
     .galeriaProductos {
@@ -508,62 +665,29 @@ to {
         font-size: 0.938rem;
     }
 
-    .footer {
-        font-size: 0.938rem;
-    }
-
     .secciones {
         font-size: 1.5rem;
     }
-}
+
+    #Contacto {
+        font-size: 1.5rem;
+    }
 
 
+    .secciones:hover {
+        max-width: 71.7rem;
+        transition: width 2s;
+    }
 
-
-
-//EJ 1
-
-$names: (layout-1: (name: "name-1",
-        filename: "name-1.jpg",
-        color: blue),
-
-    layout-2: (name: "name-2",
-        filename: "name-2.jpg",
-        color: red));
-
-
-@each $key,
-$value in $names {
-    .#{map-get($value, name)} {
-        background-image: url("#{map-get($value, filename)}");
-        color: map-get($value, color);
+    .footerGrid {
+        grid-template-columns: 15% 67% 18%;
     }
 }
 
-//EJ 2
+@media only screen and (min-width: 1317px) {
 
-$names: (file1: "name-1.jpg", file2: "name-2.jpg");
-
-@each $key,
-$value in $names {
-    .#{$key} {
-        background-image: url("#{$value}");
-    }
-}
-
-//EJ 3
-$names2: ("name-1.jpg", "name-2.jpg");
-
-@each $value in $names2 {
-    .#{$value} {
-        background-image: url("#{$value}");
-    }
-}
-
-
-//EJ 4
-@for $i from 1 through 5 {
-    .imagen-#{$i} {
-        background-image: url("./imagen-#{$i}.jpg");
+    .secciones:hover {
+        max-width: 82.3rem;
+        transition: width 2s;
     }
 }

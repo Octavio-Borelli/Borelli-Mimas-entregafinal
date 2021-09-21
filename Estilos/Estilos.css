@@ -14,7 +14,10 @@
   height: 100vh;
   width: 100vw;
   font-family: "Seravek-ExtraLight";
-  background-color: #f5e0dc;
+  background-color: #ccc9dc;
+  background-image: url(img/fondo2.png);
+  background-position: center;
+  background-size: cover;
 }
 
 html {
@@ -27,6 +30,9 @@ html {
   height: auto;
   justify-content: center;
 }
+.seccion-1 .Nombre, .seccion-7 .Nombre, .seccion-5 .Nombre, .seccion-4 .Nombre, .seccion-3 .Nombre, .seccion-2 .Nombre {
+  background-color: #171a21;
+}
 
 .Nombre__h1--text-align {
   font-style: normal;
@@ -34,7 +40,7 @@ html {
   padding: 1.25rem 0 1.25rem 0;
   font-size: 4.75rem;
   text-transform: uppercase;
-  background: linear-gradient(to top, #f5e0dc 25%, black);
+  background: linear-gradient(to top, #ccc9dc 25%, black);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -42,9 +48,9 @@ html {
 
 /*slider*/
 .sliderPagina {
-  width: 100%;
-  height: 50rem;
-  margin: 1.875rem auto 0 auto;
+  width: 50%;
+  height: auto;
+  margin: 1.875rem auto 1.875rem auto;
 }
 
 .carousel-inner img {
@@ -52,12 +58,14 @@ html {
   background-position: center;
   height: 100%;
   width: 100%;
+  border-radius: 1rem;
 }
 
 /* Menu navegación*/
 .contenedorBarraNavegación {
   display: grid;
   justify-content: center;
+  background-color: grey;
 }
 
 .navbar {
@@ -67,71 +75,71 @@ html {
 
 .navbar li {
   padding: 1rem 1rem 1rem 1rem;
-  border-right: black 0.063rem solid;
 }
 
-li:last-child {
-  border-right: none;
+.dropdown-menu {
+  background-color: grey;
+}
+
+.dropdown-item:hover {
+  background-color: #979797;
 }
 
 /*Nosotros*/
+.seccion2grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 2rem;
+  height: auto;
+  padding: 3rem 3rem 3rem 3rem;
+}
+
 .seccion-2contenedor {
-  width: 60%;
-  margin: 2rem auto 2rem;
   border: hidden;
-  padding-top: 50%;
   position: relative;
+  padding-top: 53%;
 }
 
 .seccion-2contenedor iframe {
+  display: grid;
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
   height: 100%;
   width: 100%;
-  border-radius: 0.313rem;
+  border-radius: 1rem;
 }
 
 .secciones {
+  width: 12rem;
   position: relative;
-  margin: auto;
+  padding: 1rem 0 1rem 0;
   text-align: center;
+  background-color: grey;
+  display: grid;
 }
 
-.secciones:hover {
-  background: repeating-linear-gradient(to right, black, #f5e0dc 10%, black);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-size: 300%;
-  background-position: -200%;
-  -webkit-animation: animatedText 1s;
-          animation: animatedText 1s;
+#Nosotros, #Complementos, #Productos {
+  border-radius: 0 1rem 1rem 0;
+  transition: width 2s;
 }
 
-@-webkit-keyframes animatedText {
-  from {
-    background-position: 0%;
-  }
+#Nosotros:hover, #Complementos:hover, #Productos:hover {
+  width: 82.3rem;
 }
 
-@keyframes animatedText {
-  from {
-    background-position: 0%;
-  }
-}
-to {
-  background-position: 100%;
+#Contacto {
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+  background-color: grey;
 }
 
 .contenedorParrafo {
-  display: block;
-  justify-content: center;
-  height: auto;
-  width: 60%;
-  margin: 3rem auto 4rem auto;
+  display: grid;
+  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .contenedorParrafo__p--text-align {
@@ -142,20 +150,22 @@ to {
 
 /*Productos*/
 .galeriaProductos, .galeriaComplementos {
-  margin: 1.875rem auto 1.875rem auto;
-  padding: 0.625rem;
+  padding: 1.875rem;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(5, minmax(12.5rem, 12.5rem));
   grid-auto-rows: minmax(12.5rem, 12.5rem);
-  gap: 0.625rem;
+  gap: 1.5rem;
+}
+
+.galeriaProductos a, .galeriaComplementos a {
+  text-decoration: none;
 }
 
 .galeriaProductos__elemento, .galeriaComplementos__elemento {
   text-align: center;
+  color: black;
   font-size: 0.938rem;
-  border-radius: 0.313rem;
-  border: solid black 0.063rem;
 }
 
 .galeriaProductos__elemento:hover, .galeriaComplementos__elemento:hover {
@@ -166,8 +176,13 @@ to {
 
 #elemento1, #elemento8, #elemento7, #elemento6, #elemento5, #elemento4, #elemento3, #elemento2 {
   background-image: url(img/img4a.jpg);
+  height: 100%;
+  width: 100%;
   background-position: center;
   background-size: cover;
+  border-radius: 0.5rem;
+  color: black;
+  border: solid grey;
 }
 
 #elemento2 {
@@ -204,32 +219,44 @@ to {
 }
 
 /*Contacto*/
-.seccion-5 {
+.fondoFormulario {
   display: grid;
+  background-image: url(img/fondofinal.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .formulario-contacto {
   display: grid;
-  background-color: #bebb8b;
+  background: transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   width: 18.75rem;
   height: auto;
-  margin: 1.875rem auto;
-  padding: 1.875rem;
+  margin: 1.875rem auto 1.875rem auto;
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  border-style: none;
   position: relative;
 }
 
 .botFormulario {
-  background-color: #bebb8b;
+  background: transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   padding: 0.2rem;
   border-radius: 0.2rem;
   border-style: none;
   box-shadow: 0.225rem 0.225rem 0.625rem;
+  margin: 0.625rem;
+}
+
+.botonesFormularioUbicacion {
+  text-align: center;
+  padding: 1rem 0 1rem 0;
 }
 
 .botFormulario:hover {
-  background-color: #a3a28b;
+  background-color: #5d7185;
 }
 
 /* boton subir */
@@ -242,7 +269,7 @@ to {
   position: fixed;
   bottom: 5rem;
   right: 4rem;
-  background-color: #bebb8b;
+  background-color: grey;
   border-radius: 0.188rem;
   font-weight: normal;
   color: black;
@@ -250,28 +277,58 @@ to {
 
 .botSub:hover {
   font-weight: bolder;
-  background-color: #a3a28b;
+  background-color: #5d7185;
   text-decoration: none;
   color: black;
 }
 
 /*Footer*/
-.footer__h5--size {
-  display: flex;
-  justify-content: center;
-  padding: 1.25rem 0 1.25rem 0;
+.footerGrid {
+  display: grid;
+  grid-template-columns: 15% 67% 18%;
+  grid-column-gap: 2rem;
+  height: 100%;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #171a21;
+}
+
+.footer__text--size {
+  color: #ccc9dc;
+  display: grid;
+  text-align: center;
+  line-height: 4rem;
   font-size: 0.938rem;
 }
 
-/* Mobile first */
-/* Header */
+.redes {
+  text-align: center;
+  letter-spacing: 0.2rem;
+  line-height: 4rem;
+}
+
+.fa-whatsapp, .fa-facebook, .fa-instagram {
+  font-size: 1.5rem;
+  color: #ccc9dc;
+}
+
+/*Mobile first*/
+/*Header*/
 @media only screen and (min-width: 0px) {
-  .Nombre {
+  .Nombre__h1--text-align {
     font-size: 3rem;
   }
 
   .navbar {
     grid-template-columns: 1, 5rem;
+  }
+
+  .sliderPagina {
+    min-width: 20rem;
+  }
+
+  .seccion2grid {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
   }
 
   .parrafo {
@@ -292,21 +349,39 @@ to {
     font-size: 0.7rem;
   }
 
-  .footer {
-    font-size: 0.7rem;
-  }
-
   .secciones {
     font-size: 1.2rem;
+  }
+
+  #Contacto {
+    font-size: 1.2rem;
+  }
+
+  .secciones:hover {
+    max-width: 17rem;
+    transition: width 2s;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
   }
 }
 @media only screen and (min-width: 360px) {
-  .Nombre {
+  .Nombre__h1--text-aligne {
     font-size: 3rem;
   }
 
   .navbar {
     grid-template-columns: 1, 5rem;
+  }
+
+  .sliderPagina {
+    min-width: 20rem;
+  }
+
+  .seccion2grid {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
   }
 
   .parrafo {
@@ -319,59 +394,33 @@ to {
 
   .galeriaComplementos {
     grid-template-columns: 12.5rem;
-  }
-
-  .formulario-contacto {
-    width: 14rem;
-    height: 30rem;
-    font-size: 0.7rem;
-  }
-
-  .footer {
-    font-size: 0.7rem;
-  }
-
-  .secciones {
-    font-size: 1.2rem;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .Nombre {
-    font-size: 4rem;
-  }
-
-  .navbar {
-    grid-template-columns: repeat(5, 3rem);
-  }
-
-  .parrafo {
-    font-size: 1.2rem;
-  }
-
-  .galeriaProductos, .galeriaComplementos {
-    grid-template-columns: repeat(5, minmax(12.5rem, 12.5rem));
-  }
-
-  .galeriaComplementos {
-    grid-template-columns: repeat(3, minmax(12.5rem, 12.5rem));
   }
 
   .formulario-contacto {
     width: 20rem;
-    height: 40rem;
-    font-size: 0.938rem;
-  }
-
-  .footer {
-    font-size: 0.938rem;
+    height: 30rem;
+    font-size: 0.7rem;
   }
 
   .secciones {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  #Contacto {
+    font-size: 1.2rem;
+  }
+
+  .secciones:hover {
+    max-width: 20rem;
+    transition: width 2s;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
   }
 }
-@media only screen and (min-width: 1200px) {
-  .Nombre {
+@media only screen and (min-width: 600px) {
+  .Nombre__h1--text-align {
     font-size: 5rem;
   }
 
@@ -379,8 +428,79 @@ to {
     grid-template-columns: repeat(5, 3rem);
   }
 
+  .sliderPagina {
+    min-width: 32rem;
+  }
+
+  .seccion2grid {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+
   .parrafo {
     font-size: 1.2rem;
+  }
+
+  .galeriaProductos, .galeriaComplementos {
+    grid-template-columns: 12.5rem;
+  }
+
+  .galeriaComplementos {
+    grid-template-columns: 12.5rem;
+  }
+
+  .formulario-contacto {
+    width: 30rem;
+    height: 40rem;
+    font-size: 0.938rem;
+  }
+
+  .secciones {
+    font-size: 1.5rem;
+  }
+
+  #Contacto {
+    font-size: 1.5rem;
+  }
+
+  .secciones:hover {
+    max-width: 34.5rem;
+    transition: width 2s;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .galeriaProductos, .galeriaComplementos {
+    grid-template-columns: repeat(3, minmax(12.5rem, 12.5rem));
+  }
+
+  .galeriaComplementos {
+    grid-template-columns: repeat(3, minmax(12.5rem, 12.5rem));
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .Nombre__h1--text-align {
+    font-size: 5rem;
+  }
+
+  .navbar {
+    grid-template-columns: repeat(5, 3rem);
+  }
+
+  .sliderPagina {
+    min-width: 45rem;
+  }
+
+  .seccion2grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+
+  .parrafo {
+    font-size: 1.5rem;
   }
 
   .galeriaProductos, .galeriaComplementos {
@@ -397,56 +517,26 @@ to {
     font-size: 0.938rem;
   }
 
-  .footer {
-    font-size: 0.938rem;
-  }
-
   .secciones {
     font-size: 1.5rem;
   }
-}
-.name-1 {
-  background-image: url("name-1.jpg");
-  color: blue;
-}
 
-.name-2 {
-  background-image: url("name-2.jpg");
-  color: red;
-}
+  #Contacto {
+    font-size: 1.5rem;
+  }
 
-.file1 {
-  background-image: url("name-1.jpg");
-}
+  .secciones:hover {
+    max-width: 71.7rem;
+    transition: width 2s;
+  }
 
-.file2 {
-  background-image: url("name-2.jpg");
+  .footerGrid {
+    grid-template-columns: 15% 67% 18%;
+  }
 }
-
-.name-1.jpg {
-  background-image: url("name-1.jpg");
-}
-
-.name-2.jpg {
-  background-image: url("name-2.jpg");
-}
-
-.imagen-1 {
-  background-image: url("./imagen-1.jpg");
-}
-
-.imagen-2 {
-  background-image: url("./imagen-2.jpg");
-}
-
-.imagen-3 {
-  background-image: url("./imagen-3.jpg");
-}
-
-.imagen-4 {
-  background-image: url("./imagen-4.jpg");
-}
-
-.imagen-5 {
-  background-image: url("./imagen-5.jpg");
+@media only screen and (min-width: 1317px) {
+  .secciones:hover {
+    max-width: 82.3rem;
+    transition: width 2s;
+  }
 }/*# sourceMappingURL=Estilos.css.map */
